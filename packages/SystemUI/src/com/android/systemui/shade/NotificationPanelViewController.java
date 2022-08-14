@@ -70,6 +70,7 @@ import android.os.Handler;
 import android.os.PowerManager;
 import android.os.PowerManagerInternal;
 import android.os.Trace;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
 import android.util.IndentingPrintWriter;
