@@ -7042,6 +7042,11 @@ public final class Settings {
         public static final String STATUSBAR_TOP_PADDING = "statusbar_top_padding";
 
         /**
+         * @hide
+         */
+        public static final String SETTINGS_STYLE = "settings_style";
+
+        /**
          * Which Vibration Pattern to use
          * 0: dzzz-dzzz
          * 1: dzzz-da
