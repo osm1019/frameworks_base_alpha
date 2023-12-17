@@ -58,8 +58,8 @@ public class PixelPropsUtils {
 
     // Packages to Spoof as Pixel 8 Pro
     private static final String[] packagesToChangePixel8Pro = {
-            "com.google.android.apps.bard",
-            "com.google.android.apps.customization.pixel",
+            "com.android.chrome",
+            "com.android.vending",
             "com.google.android.apps.emojiwallpaper",
             "com.google.android.apps.privacy.wildlife",
             "com.google.android.apps.wallpaper",
@@ -88,6 +88,7 @@ public class PixelPropsUtils {
             "com.google.android.apps.miphone.aiai.AiaiApplication",
             "com.google.android.apps.motionsense.bridge",
             "com.google.android.apps.nexuslauncher",
+            "com.google.android.apps.customization.pixel",
             "com.google.android.apps.pixelmigrate",
             "com.google.android.apps.recorder",
             "com.google.android.apps.restore",
@@ -106,6 +107,8 @@ public class PixelPropsUtils {
             "com.google.android.setupwizard",
             "com.google.android.youtube",
             "com.google.ar.core",
+            "com.google.android.apps.bard",
+            "com.google.android.apps.customization.pixel",
             "com.google.intelligence.sense",
             "com.google.oslo"
     };
@@ -261,6 +264,11 @@ public class PixelPropsUtils {
                 sIsExcluded = true;
                 return;
             }
+           if (Arrays.asList(packagesToKeep).contains(packageName) ||
+                    packageName.startsWith("com.google.android.apps.googleassistant")) {
+                return;
+            }
+
 
             Map<String, Object> propsToChange = new HashMap<>();
 
@@ -279,7 +287,7 @@ public class PixelPropsUtils {
             } else if (Arrays.asList(packagesToChangePixel8Pro).contains(packageName)) {
                 propsToChange.putAll(propsToChangePixel8Pro);
             } else {
-                propsToChange.putAll(propsToChangePixel5a);
+                propsToChange.putAll(propsToChangePixel8Pro);
             }
 
             if (DEBUG) Log.d(TAG, "Defining props for: " + packageName);
