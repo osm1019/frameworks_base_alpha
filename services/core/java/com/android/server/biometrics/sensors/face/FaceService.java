@@ -720,10 +720,9 @@ public class FaceService extends SystemService {
                         filteredInstances = filterAvailableHalInstances(hidlSensors, aidlSensors);
 
                 final List<ServiceProvider> providers = new ArrayList<>();
-                /*
+
                 providers.addAll(getHidlProviders(filteredInstances.first));
-                providers.addAll(getAidlProviders(filteredInstances.second));
-                */
+                providers.addAll(getAidlProviders(filteredInstances.second));               
                 providers.addAll(getSenseProviders());
                 return providers;
             });
