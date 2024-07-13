@@ -391,8 +391,8 @@ public class FooterView extends StackScrollerDecorView {
                 Utils.getColorStateListDefaultColor(mContext, R.color.nf_color_button_text);
         final Drawable clearAllBg = theme.getDrawable(R.drawable.notif_footer_btn_background);
         final Drawable manageBg = theme.getDrawable(R.drawable.notif_footer_btn_background);
-        final @ColorInt int scHigh;
-        if (!notificationBackgroundTintOptimization()) {
+        final @ColorInt int scHigh = 0;
+        /*if (!notificationBackgroundTintOptimization()) {
             scHigh = Utils.getColorAttrDefaultColor(mContext,
                     com.android.internal.R.attr.materialColorSurfaceContainerHigh);
             if (scHigh != 0) {
@@ -402,7 +402,7 @@ public class FooterView extends StackScrollerDecorView {
             }
         } else {
             scHigh = 0;
-        }
+        }*/
         mClearAllButton.setBackground(clearAllBg);
         mClearAllButton.setTextColor(onSurface);
         mManageOrHistoryButton.setBackground(manageBg);
